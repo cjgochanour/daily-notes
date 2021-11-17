@@ -20,11 +20,19 @@ const noteAboutToday = {
     id: 3,
     subject: "JavaScript",
     date: "Nov 17",
-    feeling: "logic isn't real, it can't hurt me",
+    feeling: "that logic isn't real, it can't hurt me",
     timeSpent: 120,
 }
 
 notes.push(noteAboutToday)
 
-
-console.log(notes)
+for (const note of notes) {
+    console.log(`
+    Note ${note.id}
+    ${note.date}
+    I learned about ${note.subject}
+    I spent ${note.timeSpent} working on it.
+    I felt ${note.feeling}
+    -------------
+    `)
+}
