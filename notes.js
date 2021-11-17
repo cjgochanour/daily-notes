@@ -15,21 +15,34 @@ const notes = [
     },
 ]
 
+function createNote(note) {
+    const lastIndex = notes.length - 1
+    const lastNote = notes[lastIndex]
+    const maxID = lastNote.id
+    const newID = maxID + 1
+  
+    note.id = newID
+    notes.push(note)
+}
 
 const noteAboutToday = {
     id: 3,
     subject: "JavaScript",
     date: "Nov 17",
-    feeling: "that logic isn't real, it can't hurt me",
+    feeling: "logic isn't real, it can't hurt me",
     timeSpent: 120,
 }
 
 notes.push(noteAboutToday)
 
-const searchTerm = "scared"
-
-for (const note of notes) {
-    if (note.feeling === searchTerm){
-        console.log(note.subject)
-    }
+const moreNewerNote = {
+    subject: "Zoom",
+    date: "Nov 17",
+    dateCreated: Date(),
+    feeling: "zoomy",
+    timeSpent: "3.50"
 }
+
+createNote(moreNewerNote)
+
+console.log(notes)
