@@ -26,13 +26,10 @@ const noteAboutToday = {
 
 notes.push(noteAboutToday)
 
+const searchTerm = "scared"
+
 for (const note of notes) {
-    console.log(`
-    Note ${note.id}
-    ${note.date}
-    I learned about ${note.subject}
-    I spent ${note.timeSpent} working on it.
-    I felt ${note.feeling}
-    -------------
-    `)
+    if (note.feeling === searchTerm){
+        console.log(note.subject)
+    }
 }
